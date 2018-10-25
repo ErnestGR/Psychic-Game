@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<title>Psychic Game</title>
+</head>
+
+<body>
+<h1>The Psychic Game</h1>
+<h2>Guess what letter I'm thinking of</h2>
+
+<p id="wins"></p>
+<p id="loses"></p>
+<p id="guessesLeft"></p>
+<p id="yourGuess"></p>
+
+<script>
+    let wins = 0;
+    let loses = 0;
+    let guesses = 5;
+    let computerChoice = "";
+    let userInput = "";
+    let alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];  
+    computerChoice = alphabet[(Math.random()*alphabet.length)|0];
+    console.log(computerChoice);
+
+    userInput = document.getElementById("yourGuess");
+    document.onkeyup = function(event) {
+    let userInput = event.key;
+    
+  
+ if(userInput === computerChoice){
+        wins++;
+    }
+    else{
+        guesses--;
+    }
+if (wins === 5){
+    console.log('You win the game');
+}
+if(guesses === 0){
+    loses++;
+}
+if (loses === 5){
+    console.log('You lose the game')
+}
+    document.getElementById('wins').innerHTML = "Wins: " + wins;
+    document.getElementById('loses').innerHTML = "loses: " + loses;
+    document.getElementById('guessesLeft').innerHTML = "Guesses left: " + guesses;
+
+}
+
+
+</script> 
+</body>
+</html>
