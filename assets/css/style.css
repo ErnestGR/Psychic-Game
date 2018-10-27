@@ -1,0 +1,14 @@
+body{
+    background-color: #2f3237;
+}
+#container{
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border: 20px;
+    border-style: dotted;
+    border-color: aliceblue;
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
